@@ -10,6 +10,9 @@ var wheelframe = [0,0,0];
 var wheelpos = [26,26,26];
 var rand = 0;
 var frame = 0;
+var credits = 100;
+var betted = 0;
+var paid = [0,0];
 
 //page loads
 window.onload = function() {
@@ -23,6 +26,32 @@ window.onload = function() {
   ctx=document.getElementById("can").getContext("2d");
   
   tim = setInterval(tick,20);
+  
+ $('#can').click(function(e){
+
+    var rect = document.getElementById("can").getBoundingClientRect();
+    var x = event.clientX - rect.left;
+    var y = event.clientY - rect.top;
+    //console.log("x: " + x + " y: " + y);
+
+//    var x = e.clientX;
+  //  var y = e.clientY;         
+    console.log("xy:"+x+" "+y);
+    if ( 310<y && y<375 ) {
+      if ( 314<x && x<355 ) {
+        spin();
+      }
+      if ( 141<x && x<180 ) {
+        payTable();
+      }
+      if ( 198<x && x<240 ) {
+        bet(credits);
+      }
+      if ( 255<x && x<294 ) {
+        bet(1);
+      }
+    }
+  });
   
 };
 
@@ -38,7 +67,9 @@ function tick() {
       wheelpos[i]=26;
       if (wheelspeed[2]==0) {   //check for win
         if (wheelstart[0]==wheelstart[1] && wheelstart[0]==wheelstart[2]) {
-          win();
+          win(1);
+        } else if (wheelstart[0]==wheelstart[1] || wheelstart[0]==wheelstart[2] || wheelstart[1]==wheelstart[2]) {
+          win(0);
         } else {                //loose
           loose();
         }
@@ -69,19 +100,55 @@ function tick() {
   }
   frame++;                          //uppdatera framecounter som håller reda på slumptider bl.a.
   ctx.drawImage(frameimage, 0,0);   //rita ut ramen över allt
+  ctx.fillStyle = "red";
+  ctx.font = "20px Arial";
+  ctx.fillText(credits,132,283);
+  ctx.fillText(betted,212,283);
+  ctx.fillText(paid[0],410,280);
+  ctx.fillText(paid[1],410,297);
 }
 
-function roll() {
-  for (var i = 0;i<3;i++) {
-    wheeltargetspeed[i] = 15+i;
+function spin() {
+  if (betted>0) {
+    for (var i = 0;i<3;i++) {
+      wheeltargetspeed[i] = 15+i;
+    }
+    rand = frame+130+Math.random()*100;// (ca 4 sek)
+  } else {
+    alert("You have to bet something!");
   }
-  rand = frame+130+Math.random()*100;// (ca 4 sek)
 }
 
-function win() {
+function bet(amount) {
+  if (amount <= credits) {
+    credits-=amount;
+    betted+=amount;
+    updateNumbers();
+  } else {
+    alert("You don't have any more credits!");
+  }
+}
+
+function updateNumbers() {
+  paid[0] = 4*betted;
+  paid[1] = 20*betted;
+}
+
+function payTable() {
+  credits = 0;
+}
+
+function win(wich) {
+  credits+=paid[wich];
+  betted=0;
+  paid[0]=0;
+  paid[1]=0;
   console.log("win");
 }
 
 function loose() {
+  paid[0]=0;
+  paid[1]=0;
+  betted=0;
   console.log("loose");
 }
