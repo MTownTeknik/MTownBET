@@ -8,3 +8,33 @@
 	height: 5vw;
 	background-color: #222;
 }
+
+.frames {
+  border:2px inset #888;
+  float:left;
+  height:500px;
+}
+
+#left {
+  position:absolute;
+  top:5vw;
+  left:0px;
+  width:24vw;
+}
+
+#center {
+  width:100%;
+  position:absolute;
+  left:0px;
+  top:0px;
+  text-align:center;
+  min-width:480px;
+  height:100%;
+}
+
+#right {
+  position:absolute;
+  top:5vw;
+  right:0px;
+  width:25vw;
+}
