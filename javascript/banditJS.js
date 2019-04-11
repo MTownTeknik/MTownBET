@@ -90,10 +90,13 @@ function tick() {
     if (frame>rand) {           
       if (wheelspeed[0] == 0) {
         if (wheelspeed[1] == 0) {
+          if (wheeltargetspeed[2] != 0) document.getElementById("stop").play();
           wheeltargetspeed[2] = 0;
         }
+        if (wheeltargetspeed[1] != 0) document.getElementById("stop").play();
         wheeltargetspeed[1] = 0;
       }
+      if (wheeltargetspeed[0] != 0) document.getElementById("stop").play();
       wheeltargetspeed[0] = 0;
       rand = frame+20+Math.random()*20;   //lite fördröjning mellan låsningen av hjulen
     }
@@ -110,6 +113,7 @@ function tick() {
 
 function spin() {
   if (betted>0) {
+    document.getElementById("spin").play();
     for (var i = 0;i<3;i++) {
       wheeltargetspeed[i] = 15+i;
     }
@@ -121,6 +125,7 @@ function spin() {
 
 function bet(amount) {
   if (amount <= credits) {
+    document.getElementById("coin").play();
     credits-=amount;
     betted+=amount;
     updateNumbers();
@@ -130,8 +135,8 @@ function bet(amount) {
 }
 
 function updateNumbers() {
-  paid[0] = 4*betted;
-  paid[1] = 20*betted;
+  paid[0] = 4*betted;   //two alike: (15+15+15*16/4096)=0.1758... -> 1/5.68
+  paid[1] = 200*betted; //three alike 16/4096=0.003906... -> 1/256
 }
 
 function payTable() {
@@ -139,6 +144,7 @@ function payTable() {
 }
 
 function win(wich) {
+  document.getElementById("pay").play();
   credits+=paid[wich];
   betted=0;
   paid[0]=0;
