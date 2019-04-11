@@ -135,7 +135,7 @@ function bet(amount) {
 }
 
 function updateNumbers() {
-  paid[0] = 4*betted;   //two alike: (15+15+15*16/4096)=0.1758... -> 1/5.68
+  paid[0] = 4*betted;   //two alike: ((15+15+15)*16/4096)=0.1758... -> 1/5.68
   paid[1] = 200*betted; //three alike 16/4096=0.003906... -> 1/256
 }
 
@@ -144,7 +144,8 @@ function payTable() {
 }
 
 function win(wich) {
-  document.getElementById("pay").play();
+  if (wich==0) document.getElementById("pay").play();
+  if (wich==1) document.getElementById("jackpot").play();
   credits+=paid[wich];
   betted=0;
   paid[0]=0;
