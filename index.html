@@ -5,15 +5,22 @@
 
 	<script type="text/javascript" src="javascript/indexJS.js"></script>
 
-	<title></title>
+	<title>MTown Casino</title>
 
 </head>
 <body>
 	<div id="header">
-		<a href="index.html"><img src="img/MTown.png" id="headerLogo"></a>
+		<a href="index.html"><img src="img/MTown.png" id="headerLogo"></a>	<!-- href ska bytas till OnClick med JS (iFrame)-->
+
+		<a onclick="loadPage('roulette.html', 100)"><img src="img/RouletteIcon.png" class="hudIcon" style="margin-left:25vw"></a>		<!--href ska bytas till OnClick...-->
+		<a onclick="loadPage('crash.html', 50)"><img src="img/CrashIcon.png" class="hudIcon"></a>
+
+		<a onclick="loadPage('bandit.html', 50)"><img src="img/SlotsIcon.png" class="hudIcon"></a>
+	</div>
+ 	
+	<div id="mainFrame">
+			<iframe src="bandit.html" id="gameFrame" scrolling="no"></iframe>
 
 	</div>
-
-	<div id="mainFrame"></div>
 </body>
 </html>
