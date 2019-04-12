@@ -14,7 +14,7 @@ var credits = 100;
 var betted = 0;
 var paid = [0,0];
 
-//page loads
+//page loads, setup timer, sizes, buttonclick function
 window.onload = function() {
   for (var i = 0;i<16;i++) {
     images[i] = document.getElementById("bi"+i);
@@ -55,8 +55,9 @@ window.onload = function() {
   
 };
 
+// the function that animates the rolling wheels
 function tick() {
-  for (var i = 0;i<3;i++) {
+  for (var i = 0;i<3;i++) {                   //loopa igenom alla tre hjulen
     if (wheelspeed[i]<wheeltargetspeed[i]) {    //acceleration
       wheelspeed[i]++;
     }
@@ -78,7 +79,7 @@ function tick() {
 
     if (wheelpos[i]>=92) {                      //har den scrollat fram en bild?
       wheelstart[i]--;
-      if (wheelstart[i]<0) wheelstart[i]=15;    //i så fall, back en hel bild och byt ikon-pekare
+      if (wheelstart[i]<0) wheelstart[i]=15;    //i så fall, backa en hel bild och byt ikon-pekare
       wheelpos[i]=wheelpos[i]-92;
     }
 
@@ -86,7 +87,7 @@ function tick() {
     ctx.drawImage(images[(wheelstart[i]+1)%16], 100*i+90, wheelpos[i]+108);
     ctx.drawImage(images[(wheelstart[i]+2)%16], 100*i+90, wheelpos[i]+200);
 
-                      //inled låsning i ordning
+                            //inled låsning i ordning
     if (frame>rand) {           
       if (wheelspeed[0] == 0) {
         if (wheelspeed[1] == 0) {
@@ -98,7 +99,7 @@ function tick() {
       }
       if (wheeltargetspeed[0] != 0) document.getElementById("stop").play();
       wheeltargetspeed[0] = 0;
-      rand = frame+20+Math.random()*20;   //lite fördröjning mellan låsningen av hjulen
+      rand = frame+20+Math.random()*20;   //lite slumpfördröjning mellan låsningen av hjulen
     }
   }
   frame++;                          //uppdatera framecounter som håller reda på slumptider bl.a.
@@ -111,6 +112,7 @@ function tick() {
   ctx.fillText(paid[1],410,297);
 }
 
+// sätt fart på hjulen, om man satsat
 function spin() {
   if (betted>0) {
     document.getElementById("spin").play();
@@ -123,6 +125,7 @@ function spin() {
   }
 }
 
+//satsa nåt, om man har nåt
 function bet(amount) {
   if (amount <= credits) {
     document.getElementById("coin").play();
@@ -134,15 +137,18 @@ function bet(amount) {
   }
 }
 
+//uppdatera de utdelade summorna
 function updateNumbers() {
   paid[0] = 4*betted;   //two alike: ((15+15+15)*16/4096)=0.1758... -> 1/5.68
   paid[1] = 200*betted; //three alike 16/4096=0.003906... -> 1/256
 }
 
+//spelaren tar ut krediter i "pengar"....
 function payTable() {
   credits = 0;
 }
 
+//spelaren fick en vinst
 function win(wich) {
   if (wich==0) document.getElementById("pay").play();
   if (wich==1) document.getElementById("jackpot").play();
@@ -153,6 +159,7 @@ function win(wich) {
   console.log("win");
 }
 
+//spelaren förlorade omgången
 function loose() {
   paid[0]=0;
   paid[1]=0;
