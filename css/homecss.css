@@ -20,6 +20,7 @@ body {
 	padding-left: 2vw;
 	margin-top: 0.5vw;
 	width: 10vw;
+	cursor: pointer;
 }
 
 #mainFrame {
@@ -35,6 +36,8 @@ body {
 	margin-top: 0.5vw;
 	width: 5vw;
 	float: right;
+
+	cursor: pointer;
 }
 
 #gameFrame {
