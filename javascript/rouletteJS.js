@@ -8,10 +8,15 @@ var numOrder = [0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 2
 
 
 var offset = 0;
+var preOffset = 0;
 var spinLength;
+var vel;
+var spinBool = false;
+
+var spinInterval;
 
 
-function test() {
+function Draw() {
   	var ctx = document.getElementById("canv").getContext("2d");
 
   	for(var i = 0; i < 74; i++)
@@ -44,16 +49,58 @@ function test() {
 
 function Roll()
 {
-	spinLength = Math.random() * 3700;
-
-	setInterval(slide, 10);
+	if(spinBool == false)
+	{
+		spinBool = true;
+		spinLength = Math.random() * 4000 + 4000 + offset;
+		preOffset = offset;
+		vel = 0.25;
+		spinInterval = setInterval(slide, 10);
+	}
 }
 
 
 function slide(){
-	if(offset < spinLength){
+	if(offset < spinLength)
+	{
+		if(offset - preOffset < 1500)
+		{
+			vel = vel + 0.05;
+		}
 
-	offset = offset + 3;
-	test();
+		if(offset > spinLength - 1500)
+		{
+			vel = vel - 0.05;
+		} 
+
+		if(vel < 0)
+		{
+			vel = 1;
+		}
+
+		offset = offset + vel;
+		
+		Draw();
+	} else {
+		spinBool = false;
+		console.log(offset%3700);
+		console.log("TALET ÄR: " + numOrder[(4 + Math.floor((offset%3700 + 50)/100)) % 37])
+
+		var clr = "";
+
+		if(((4 + Math.floor((offset%3700 + 50)/100)) % 37) %2 == 0)
+		{
+			clr = "Black";
+		} else {
+			clr = "Red";
+		}
+
+		if((4 + Math.floor((offset%3700 + 50)/100)) % 37 == 0)
+		{
+			clr = "Green";
+		}
+
+		alert("DU RULLADE: " + numOrder[(4 + Math.floor((offset%3700 + 50)/100)) % 37] + ", Färgen är: " + clr);
+		clearInterval(spinInterval);
 	}
 }
