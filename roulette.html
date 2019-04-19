@@ -8,17 +8,19 @@
 	<script type="text/javascript" src="javascript/rouletteJS.js"></script>
 	<title>Roulette</title>
 </head>
-<body>
+<body onload="test()">
+
 	<div style="text-align:	center;width:100%">
-		<input type="button" onclick="test()">
-		<br>
 		<canvas id="canv" width="900" height="80"/><br>
 	</div>
 
+
 	<div style="text-align: center; width: 100%">		
-		<div id="betRed"   class="betField"></div>
-		<div id="betGreen" class="betField"></div>
-		<div id="betBlack" class="betField"></div>
+		<div id="betField"></div><br>
+
+		<div id="betRed"   class="betInfo"></div>
+		<div id="betGreen" class="betInfo"></div>
+		<div id="betBlack" class="betInfo"></div>
 	</div>
 
 </body>

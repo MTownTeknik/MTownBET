@@ -4,9 +4,22 @@
 
 }
 
-.betField {
-	border: 3px solid #5994d7;
-	border-radius: 15px;
+#betField {
+	border: 2px solid #5994d7;
+	border-radius: 10px;
+
+	display: inline-block;
+	margin-top: 20px;
+
+	width: 850px;
+	height: 60px;
+
+	background-color: #2f3e45;
+}
+
+.betInfo {
+	border: 2px solid #5994d7;
+	border-radius: 10px;
 
 	margin-left: 10px;
 	margin-right: 10px;
