@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div id="header">
-		<a onclick="loadPage('home.html', 50)"><img src="img/MTown.png" id="headerLogo" draggable="false"></a>	<!-- href ska bytas till OnClick med JS (iFrame)-->
+		<a onclick="loadPage('home.html', 50)"><img src="img/logotype.png" id="headerLogo" draggable="false"></a>	<!-- href ska bytas till OnClick med JS (iFrame)-->
 
 
 		<div id="accountDiv">
@@ -31,9 +31,16 @@
 
 	</div>
 
-	<div id="mainFrame">
-			<iframe src="roulette.html" id="gameFrame" scrolling="no"></iframe>		<!--Byt roulette.html med home.html-->
+		<iframe src="roulette.html" id="gameFrame" scrolling="no"></iframe>		<!--Byt roulette.html med home.html-->
 
+	<div id="preload">
+		<img src="img/logotype.png">
+
+		<div id="loader-frame">
+			<div id="loader"></div>
+		</div>
+
+		<p>YOU WILL HAVE A CHANCE OF WINNING THE IT EVERYTIME</p>
 	</div>
 </body>
 </html>
