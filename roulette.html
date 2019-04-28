@@ -17,7 +17,13 @@
 
 
 	<div style="text-align: center; width: 100%">		
-		<div id="betField"></div><br>
+		<div id="betField">
+			<p id="betHeader">YOUR BET</p><br><br>
+			<input type="textfield" onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+			value="100" id="betAmount">
+
+			<input type="button" value="CLEAR" id="clearBTN">
+		</div><br>
 
 		<div id="betRed"   class="betInfo"></div>
 		<div id="betGreen" class="betInfo"></div>
