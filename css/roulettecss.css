@@ -1,0 +1,78 @@
+#canv {
+	border: 3px solid #5994d7;
+	border-radius: 25px;
+
+}
+
+#betField {
+	border: 2px solid #5994d7;
+	border-radius: 10px;
+
+	display: inline-block;
+	margin-top: 20px;
+
+	width: 850px;
+	height: 80px;
+
+	background-color: #2f3e45;
+}
+
+.betInfo {
+	border: 2px solid #5994d7;
+	border-radius: 10px;
+
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+
+	display: inline-block;
+
+	width: 250px;
+	height: 400px;
+}
+
+#betHeader {
+	font-size: 15px;
+	font-family: Calibri;
+	color: #00cc11;
+
+	line-height: 10px;
+	margin-top: 10px;
+	margin-left: 20px;
+
+	float: left;
+}
+
+#betAmount {
+	border: none;
+	outline: none;
+	width: 200px;
+	height: 30px;
+
+	margin-top: -5px;
+	margin-left: 20px;
+
+	border-bottom: 1px solid #FFF;
+	background-color: #FFFFFF00;
+
+	font-size: 20px;
+
+	color: #FFF;
+	float: left;
+}
+
+#clearBTN {
+	background-color: #FFFFFF00;
+	border: none;
+	outline: none;
+
+	margin-top: 7.5px;
+	margin-left: -50px;
+	float: left;
+	color: #FFF;
+}
+
+#clearBTN:hover {
+	color: #c6c6c6;
+	cursor: pointer;	
+}

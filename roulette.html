@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" type="text/css" href="css/roulettecss.css">
+
+	<script type="text/javascript" src="javascript/rouletteJS.js"></script>
+	<title>Roulette</title>
+</head>
+<body onload="Draw()">
+
+	<div style="text-align:	center;width:100%">
+		<input type="button" name="PH" onclick="Roll()" value="PRESS TO TEST ROLL"><br>
+		<canvas id="canv" width="900" height="80"/>
+	</div>
+
+
+	<div style="text-align: center; width: 100%">		
+		<div id="betField">
+			<p id="betHeader">YOUR BET</p><br><br>
+			<input type="textfield" onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+			value="100" id="betAmount">
+
+			<input type="button" value="CLEAR" id="clearBTN">
+		</div><br>
+
+		<div id="betRed"   class="betInfo"></div>
+		<div id="betGreen" class="betInfo"></div>
+		<div id="betBlack" class="betInfo"></div>
+	</div>
+
+</body>
+</html>

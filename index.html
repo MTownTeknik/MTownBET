@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+
 	<link rel="stylesheet" type="text/css" href="css/homecss.css">
 
 	<script type="text/javascript" src="javascript/indexJS.js"></script>
@@ -10,17 +12,35 @@
 </head>
 <body>
 	<div id="header">
-		<a href="index.html"><img src="img/MTown.png" id="headerLogo"></a>	<!-- href ska bytas till OnClick med JS (iFrame)-->
+		<a onclick="loadPage('home.html', 50)"><img src="img/logotype.png" id="headerLogo" draggable="false"></a>	<!-- href ska bytas till OnClick med JS (iFrame)-->
 
-		<a onclick="loadPage('roulette.html', 100)"><img src="img/RouletteIcon.png" class="hudIcon" style="margin-left:25vw"></a>		<!--href ska bytas till OnClick...-->
-		<a onclick="loadPage('crash.html', 50)"><img src="img/CrashIcon.png" class="hudIcon"></a>
 
-		<a onclick="loadPage('bandit.html', 50)"><img src="img/SlotsIcon.png" class="hudIcon"></a>
+		<div id="accountDiv">
+			<img src="img/profilePicture.png" draggable="false">
+			<p>#9105</p>
+
+			<div id="currency">
+				<p>$ 1000</p>
+			</div>
+		</div>
+
+
+		<a onclick="loadPage('bandit.html', 50)"><img src="img/SlotsIcon.png" class="hudIcon" draggable="false"></a>
+		<a onclick="loadPage('crash.html', 50)"><img src="img/CrashIcon.png" class="hudIcon" draggable="false"></a>
+		<a onclick="loadPage('roulette.html', 50)"><img src="img/RouletteIcon.png" class="hudIcon" draggable="false"></a>
+
 	</div>
- 	
-	<div id="mainFrame">
-			<iframe src="bandit.html" id="gameFrame" scrolling="no"></iframe>
 
+		<iframe src="roulette.html" id="gameFrame" scrolling="no"></iframe>		<!--Byt roulette.html med home.html-->
+
+	<div id="preload">
+		<img src="img/logotype.png">
+
+		<div id="loader-frame">
+			<div id="loader"></div>
+		</div>
+
+		<p>YOU WILL HAVE A CHANCE OF WINNING THE IT EVERYTIME</p>
 	</div>
 </body>
 </html>
