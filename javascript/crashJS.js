@@ -2,8 +2,8 @@ var interval = setInterval(crasher, 100);
 var stop = false
 var randomNum;
 var fcnt = 0; //function time
-var xPos = 10;
-var yPos = 10;
+var xPos = 0;
+var yPos = 390;
 
 randomNum = Math.floor((Math.random() * 100) + fcnt);
 console.log(fcnt + " " + randomNum);
@@ -16,7 +16,8 @@ function crashCounter() {
     graph();
     multiplier = multiplier + 0.01;
     console.log(multiplier);
-  } //doesnt draw the line down when crashing
+  }
+  graph();
 }
 
 function crasher() {
@@ -31,13 +32,14 @@ function crasher() {
 
 function graph() {
   var ctx = document.getElementById("canv").getContext("2d");
-  ctx.fillStyle = "#FFF";
+  ctx.fillStyle = "#FFF"
 
   if (stop == false) {
-    ctx.fillRect(xPos, yPos, 1, 1);
-    xPos++;
+    ctx.fillRect(xPos, yPos, 5, 10);
+    xPos += 5;
+    yPos -= 3;
   } else if (stop == true){
-    ctx.fillRect(xPos, yPos, 1, 50);
+    ctx.fillRect(xPos, yPos, 7, 1000);
   }
   ctx.save();
 }
