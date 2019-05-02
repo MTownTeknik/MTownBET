@@ -1,12 +1,14 @@
-var loadRepeats = 3;		//DEN SKA VARA 3. MAN KAN TEMPORÄRT BYTA DEN TILL (1) FÖR ATT SKIPPA ANIMATION VID UTVECKLING!
-
+var loadRepeats = 0;		//DEN SKA VARA 3. MAN KAN TEMPORÄRT BYTA DEN TILL (0) FÖR ATT SKIPPA ANIMATION VID UTVECKLING!
 
 
 loadAnim = setInterval(removeLoad, 1000);
 
 
 function main() {
-
+	if(loadRepeats == 0) {
+		loadRepeats = 1;
+		removeLoad();
+	}
 }
 
 function loadPage(url, pix) {

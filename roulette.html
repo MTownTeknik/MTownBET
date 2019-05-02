@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/roulettecss.css">
 
 	<script type="text/javascript" src="javascript/rouletteJS.js"></script>
+	<script type="text/javascript" src="javascript/betfieldJS.js"></script>
 	<title>Roulette</title>
 </head>
 <body onload="Draw()">
@@ -23,6 +24,14 @@
 			value="100" id="betAmount">
 
 			<input type="button" value="CLEAR" id="clearBTN">
+
+			<input type="button" onclick="add(10)" value="+10" class="betBTN">
+			<input type="button" onclick="add(100)" value="+100" class="betBTN">
+			<input type="button" onclick="add(1000)" value="+1000" class="betBTN">
+			<input type="button" onclick="multiply(0.5)" value="1/2" class="betBTN">
+			<input type="button" onclick="multiply(2)" value="X2" class="betBTN">
+			<input type="button" onclick="setMax()" value="MAX" class="betBTN">
+
 		</div><br>
 
 		<div id="betRed"   class="betInfo"></div>
