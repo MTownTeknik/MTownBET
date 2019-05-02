@@ -21,22 +21,28 @@
 		<div id="betField">
 			<p id="betHeader">YOUR BET</p><br><br>
 			<input type="textfield" onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
-			value="100" id="betAmount">
+			oninput="writee()" value="100" id="betAmount">
 
-			<input type="button" value="CLEAR" id="clearBTN">
+			<input type="button" onclick="clearBet()" value="CLEAR" id="clearBTN">
 
 			<input type="button" onclick="add(10)" value="+10" class="betBTN">
 			<input type="button" onclick="add(100)" value="+100" class="betBTN">
-			<input type="button" onclick="add(1000)" value="+1000" class="betBTN">
+			<input type="button" onclick="add(-10)" value="-10" class="betBTN">
+			<input type="button" onclick="add(-100)" value="-100" class="betBTN">
 			<input type="button" onclick="multiply(0.5)" value="1/2" class="betBTN">
 			<input type="button" onclick="multiply(2)" value="X2" class="betBTN">
 			<input type="button" onclick="setMax()" value="MAX" class="betBTN">
 
 		</div><br>
 
-		<div id="betRed"   class="betInfo"></div>
-		<div id="betGreen" class="betInfo"></div>
-		<div id="betBlack" class="betInfo"></div>
+		<div id="betRed"   class="colorBet"></div>
+		<div id="betGreen" class="colorBet"></div>
+		<div id="betBlack" class="colorBet"></div>
+		<br>
+		<div id="betOdd" class="typeBet"></div>
+		<div id="betEven" class="typeBet"></div>
+		<br>
+		<div id="numberBet"></div>
 	</div>
 
 </body>

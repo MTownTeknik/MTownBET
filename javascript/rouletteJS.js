@@ -44,6 +44,7 @@ function Draw() {
 
   	ctx.fillStyle = "#5994d7";
   	ctx.fillRect(450, 0, 4, 150.5);
+  	
 }
 
 

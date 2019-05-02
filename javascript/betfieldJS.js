@@ -3,6 +3,8 @@ var currentBet = 100;
 
 
 function add(amount) {
+	getCurrentBet();
+
 	if(currentBet + amount < maxCurrency)
 	{
 		currentBet += amount;
@@ -10,11 +12,18 @@ function add(amount) {
 		currentBet = maxCurrency;
 	}
 
-	alert(currentBet);
+	if(currentBet < 0) {
+		currentBet = 0;
+	}
+
+	
+	changeText();
 }
 
 
 function multiply(factor) {
+	getCurrentBet();
+
 	if(currentBet * factor < maxCurrency)
 	{
 		currentBet *= factor;
@@ -22,15 +31,44 @@ function multiply(factor) {
 		currentBet = maxCurrency;
 	}
 
-	alert(currentBet);
+	currentBet = Math.round(currentBet);
+
+	changeText();
 }
 
 
 function setMax() {
 	currentBet = maxCurrency;
+	changeText();
+}
+
+
+function clearBet() {
+	currentBet = 0;
+	changeText();
+}
+
+
+function getCurrentBet() {
+	var textF = document.getElementById("betAmount");
+	var writtenBet = Number(textF.value);
+
+	currentBet = writtenBet;
 }
 
 
 function changeText() {
-	var textF = documents.getElementById("betAmount");
+	var textF = document.getElementById("betAmount");
+	textF.value = currentBet;
+}
+
+
+function writee() {
+	getCurrentBet();
+
+	if(currentBet > maxCurrency) {
+		currentBet = maxCurrency;
+	}
+
+	changeText();
 }
