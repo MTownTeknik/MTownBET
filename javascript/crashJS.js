@@ -4,15 +4,16 @@ var randomNum;
 var fcnt = 0; //function time
 var xPos = 0;
 var yPos = 400;
+var multiplier = 1.00;
 
 randomNum = Math.floor((Math.random() * 200) + fcnt);
 console.log(fcnt + " " + randomNum);
 
 function crashCounter() {
-  var multiplier = 1.00;
+
   var i;
 
-  for (i = 0; crasher() != 1; i++) {
+  for (i = 0; stop == false; i++) {
     multiplier = multiplier + 0.01;
     console.log(multiplier);
   }
@@ -21,6 +22,12 @@ function crashCounter() {
 
 function crasher() {
   fcnt++;
+  var i;
+
+  if (stop == false) {
+    multiplier = multiplier + 0.01;
+    console.log(multiplier);
+  }
 
   if (fcnt >= randomNum) {
     stop = true;
@@ -41,7 +48,12 @@ function graph() {
   } else if (stop == true) {
     ctx.fillRect(xPos, yPos, 5, 1000);
   }
-  ctx.save();
+
+  ctx.textAlign = "center";
+  ctx.fillStyle = "#FFF";
+  ctx.font = "30px Arial";
+  //create a black box behind the numbers for them not to be overwritten
+  ctx.fillText(multiplier + "X", 10, 50);
 }
 
 function clean() { //clears the canvas
