@@ -15,6 +15,7 @@ function crashCounter() {
 
   for (i = 0; stop == false; i++) {
     multiplier = multiplier + 0.01;
+    multiplier = Math.round(multiplier * 100) / 100;
     console.log(multiplier);
   }
 
@@ -39,7 +40,6 @@ function crasher() {
 
 function graph() {
   var ctx = document.getElementById("canv").getContext("2d");
-  ctx.fillStyle = "#FFF"
 
   if (stop == false) {
     ctx.fillRect(xPos, yPos, 5, 5);
@@ -49,10 +49,12 @@ function graph() {
     ctx.fillRect(xPos, yPos, 5, 1000);
   }
 
-  ctx.textAlign = "center";
-  ctx.fillStyle = "#FFF";
+
+  ctx.fillStyle = "#232c31";
+  ctx.fillRect(0, 10, 200, 50);
+
   ctx.font = "30px Arial";
-  //create a black box behind the numbers for them not to be overwritten
+  ctx.fillStyle = "#FFF"
   ctx.fillText(multiplier + "X", 10, 50);
 }
 
