@@ -19,13 +19,12 @@ function crashCounter() {
     multiplier = Math.round(multiplier * 100) / 100;
     console.log(multiplier);
   }
-
 }
 
 function crasher() {
 iteration++;
 
-  if (stop == false && iteration%5==0) {
+  if (stop == false && iteration%8==0) {
     fcnt++;
     multiplier = multiplier + 0.01;
     multiplier = Math.round(multiplier * 100) / 100;
@@ -44,10 +43,10 @@ function graph() {
   var ctx = document.getElementById("canv").getContext("2d");
 
   if (stop == false) {
-    ctx.fillRect(xPos, yPos, 5, 5);
+    ctx.fillRect(xPos, yPos-3, 3, 3);
     xPos += 1;
-    yPos -= xPos/200;
-  }
+    yPos -= Math.pow(xPos, 2) * 0.00001;
+  } //insert a crash thingy here
 
   ctx.fillStyle = "#232c31";
   ctx.fillRect(0, 10, 200, 50);
