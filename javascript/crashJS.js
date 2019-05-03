@@ -46,14 +46,14 @@ function graph() {
     ctx.fillRect(xPos, yPos-3, 3, 3);
     xPos += 1;
     yPos -= Math.pow(xPos, 2) * 0.00001;
-  } //insert a crash thingy here
+  } //insert another crash thingy here
 
   ctx.fillStyle = "#232c31";
-  ctx.fillRect(0, 10, 200, 50);
+  ctx.fillRect(10, 70, 200, 50);
 
   ctx.font = "30px Arial";
   ctx.fillStyle = "#FFF"
-  ctx.fillText(multiplier + "X", 10, 50);
+  ctx.fillText(multiplier + "X", 80, 110);
 }
 
 function clean() { //clears the canvas
