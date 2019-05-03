@@ -1,10 +1,11 @@
-var interval = setInterval(crasher, 10);
+var interval = setInterval(crasher, 8);
 var stop = false
 var randomNum;
 var fcnt = 0; //function time
 var xPos = 0;
 var yPos = 400;
 var multiplier = 1.00;
+var iteration = 0;
 
 randomNum = Math.floor((Math.random() * 200) + fcnt);
 console.log(fcnt + " " + randomNum);
@@ -22,10 +23,10 @@ function crashCounter() {
 }
 
 function crasher() {
-  fcnt++;
-  var i;
+iteration++;
 
-  if (stop == false) {
+  if (stop == false && iteration%5==0) {
+    fcnt++;
     multiplier = multiplier + 0.01;
     multiplier = Math.round(multiplier * 100) / 100;
     console.log(multiplier);
@@ -45,7 +46,7 @@ function graph() {
   if (stop == false) {
     ctx.fillRect(xPos, yPos, 5, 5);
     xPos += 1;
-    yPos -= 1;
+    yPos -= xPos/200;
   } else if (stop == true) {
     ctx.fillRect(xPos, yPos, 5, 1000);
   }
