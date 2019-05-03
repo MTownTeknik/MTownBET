@@ -118,4 +118,10 @@
 	font-family: Calibri;
 	font-size: 20px;
 	font-weight: bold;
+	outline: none;
 }
+
+.betBTN:hover {
+	background-color: #bababa;
+	cursor: pointer;
+} 
