@@ -32,6 +32,10 @@ body {
 	cursor: pointer;
 }
 
+.hudIcon::selection {
+	background-color: transparent;
+}
+
 #gameFrame {
 	width: 80vw;
 	height: 30vw;

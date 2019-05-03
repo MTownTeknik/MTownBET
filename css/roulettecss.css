@@ -103,3 +103,19 @@
 	color: #c6c6c6;
 	cursor: pointer;	
 }
+
+.betBTN {
+	border: none;
+	border-radius: 10px;
+	background-color: #898989;
+
+	width: 70px;
+	height: 30px;
+
+	margin-left: 2px;
+	margin-right: 2px;
+
+	font-family: Calibri;
+	font-size: 20px;
+	font-weight: bold;
+}

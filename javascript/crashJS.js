@@ -26,6 +26,7 @@ function crasher() {
 
   if (stop == false) {
     multiplier = multiplier + 0.01;
+    multiplier = Math.round(multiplier * 100) / 100;
     console.log(multiplier);
   }
 
