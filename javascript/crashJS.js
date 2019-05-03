@@ -45,7 +45,7 @@ function graph() {
   if (stop == false) {
     ctx.fillRect(xPos, yPos, 5, 5);
     xPos += 1;
-    yPos -= 1;
+    yPos -= xPos/200;
   } else if (stop == true) {
     ctx.fillRect(xPos, yPos, 5, 1000);
   }
