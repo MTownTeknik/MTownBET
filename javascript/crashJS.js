@@ -47,10 +47,7 @@ function graph() {
     ctx.fillRect(xPos, yPos, 5, 5);
     xPos += 1;
     yPos -= xPos/200;
-  } else if (stop == true) {
-    ctx.fillRect(xPos, yPos, 5, 1000);
   }
-
 
   ctx.fillStyle = "#232c31";
   ctx.fillRect(0, 10, 200, 50);
