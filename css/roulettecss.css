@@ -33,18 +33,25 @@
 	height: 50px;
 }
 
-.colorBet h1 {
+.invst h1 {
 	font-size: 20px;
 	font-family: Calibri;
 	margin-top: 2px;
+	color: #CCC;
 
 }
 
-.colorBet p {
+.invst p {
 	font-size: 15px;
 	font-family: Calibri;
 	margin-top: -10px;
+	color: #CCC;
 }
+
+.invst p::selection, h1::selection{
+	background-color: transparent;
+}
+
 
 .typeBet {
 	border: 2px solid #5994d7;
@@ -54,6 +61,7 @@
 	margin-top: 5px;
 
 	display: inline-block;
+	cursor: pointer;
 
 	width: 400px;
 	height: 50px;

@@ -15,6 +15,13 @@ var spinBool = false;
 
 var spinInterval;
 
+//BETTING CURRENCY
+var redInvested = 0;
+var greenInvested = 0;
+var blackInvested = 0;
+var oddInvested = 0;
+var evenInvested = 0;
+
 
 function Draw() {
   	var ctx = document.getElementById("canv").getContext("2d");
@@ -45,19 +52,6 @@ function Draw() {
   	ctx.fillStyle = "#5994d7";
   	ctx.fillRect(450, 0, 4, 150.5);
   	
-}
-
-
-function Roll()
-{
-	if(spinBool == false)
-	{
-		spinBool = true;
-		spinLength = Math.random() * 4000 + 4000 + offset;
-		preOffset = offset;
-		vel = 0.25;
-		spinInterval = setInterval(slide, 10);
-	}
 }
 
 
@@ -106,8 +100,72 @@ function slide(){
 	}
 }
 
-
-function betColor(collar) 
+function Roll() 
 {
-	alert(collar);
+	if(spinBool == false && lockBets())
+	{
+		spinBool = true;
+		spinLength = Math.random() * 4000 + 4000 + offset;
+		preOffset = offset;
+		vel = 0.25;
+		spinInterval = setInterval(slide, 10);
+	}
+}
+
+function LockBets() 
+{
+	var totalBetted = 0;
+	totalBetted += (redInvested + greenInvested + blackInvested);
+	totalBetted += (oddInvested + evenInvested);
+
+	//forloop alla numbers
+
+	if(totalBetted > 0) 
+	{
+		//Set cookiers(current cookies - totalBetted)
+		return true;
+	}
+	return false;
+}
+
+function ClearBets() 
+{
+
+}
+
+
+function BetColor(collar) 
+{
+	var betGraph = document.getElementById("bet" + collar).getElementsByTagName('p')[0];
+
+	switch(collar) 
+	{
+		case "Red":
+			redInvested += currentBet;
+			maxCurrency -= currentBet;
+			betGraph.innerHTML = "INVESTED: " + redInvested;
+			break;
+		case "Green":
+			greenInvested += currentBet;
+			maxCurrency -= currentBet;
+			betGraph.innerHTML = "INVESTED: " + greenInvested;
+			break;
+		case "Black":
+			blackInvested += currentBet;
+			maxCurrency -= currentBet;
+			betGraph.innerHTML = "INVESTED: " + blackInvested;
+			break;
+		case "Odd":
+			oddInvested += currentBet;
+			maxCurrency -= currentBet;
+			betGraph.innerHTML = "INVESTED: " + oddInvested;
+			break;
+		case "Even":
+			evenInvested += currentBet;
+			maxCurrency -= currentBet;
+			betGraph.innerHTML = "INVESTED: " + evenInvested;
+			break;
+	}
+
+	//writee();
 }
