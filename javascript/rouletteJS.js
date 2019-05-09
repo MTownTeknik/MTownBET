@@ -102,7 +102,7 @@ function slide(){
 
 function Roll() 
 {
-	if(spinBool == false && lockBets())
+	if(spinBool == false && LockBets())
 	{
 		spinBool = true;
 		spinLength = Math.random() * 4000 + 4000 + offset;
