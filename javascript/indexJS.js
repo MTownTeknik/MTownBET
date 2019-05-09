@@ -9,6 +9,10 @@ function main() {
 		loadRepeats = 1;
 		removeLoad();
 	}
+
+
+	/*setCookie("test", 100, 1);
+	alert(getCookie("test"));*/
 }
 
 function loadPage(url, pix) {

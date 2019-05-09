@@ -105,3 +105,9 @@ function slide(){
 		clearInterval(spinInterval);
 	}
 }
+
+
+function betColor(collar) 
+{
+	alert(collar);
+}
