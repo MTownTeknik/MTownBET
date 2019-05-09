@@ -1,4 +1,4 @@
-var interval = setInterval(crasher, 8);
+var interval = setInterval(crasher, 10);
 var stop = false
 var randomNum;
 var fcnt = 0; //function time
@@ -7,46 +7,36 @@ var yPos = 400;
 var multiplier = 1.00;
 var iteration = 0;
 
-randomNum = Math.floor((Math.random() * 200) + fcnt);
-console.log(fcnt + " " + randomNum);
-
-function crashCounter() {
-
-  var i;
-
-  for (i = 0; stop == false; i++) {
-    multiplier = multiplier + 0.01;
-    multiplier = Math.round(multiplier * 100) / 100;
-    console.log(multiplier);
-  }
-}
+randomNum = Math.floor((Math.random() * 200));
 
 function crasher() {
-iteration++;
+  iteration++;
 
-  if (stop == false && iteration%8==0) {
+  if (stop == false && iteration % 4 == 0) {
     fcnt++;
-    multiplier = multiplier + 0.01;
-    multiplier = Math.round(multiplier * 100) / 100;
-    console.log(multiplier);
+    multiplier = fcnt/10;//multiplier + 0.01;
+//    multiplier = Math.round(multiplier * 100) / 100
   }
+  console.log(fcnt + " " + randomNum);
 
   if (fcnt >= randomNum) {
     stop = true;
     clearInterval(interval);
-    //return 1;
   }
   graph();
 }
 
 function graph() {
   var ctx = document.getElementById("canv").getContext("2d");
+  var flooredMultiplier = Math.floor(multiplier);
 
   if (stop == false) {
-    ctx.fillRect(xPos, yPos-3, 3, 3);
+    ctx.fillRect(xPos/1.7, yPos - 3, 3, 3);
     xPos += 1;
-    yPos -= Math.pow(xPos, 2) * 0.00001;
-  } //insert another crash thingy here
+    yPos -= Math.pow(xPos, 1.1) * 0.0007;
+  } else if (stop == true) {
+    ctx.fillRect(xPos/1.7, yPos - 3, 3, 1000);
+  }
 
   ctx.fillStyle = "#232c31";
   ctx.fillRect(10, 70, 200, 50);
@@ -55,9 +45,11 @@ function graph() {
   ctx.fillStyle = "#FFF"
   ctx.fillText(multiplier + "X", 80, 110);
 }
-
-function clean() { //clears the canvas
+//clearing the canvas
+function clean() {
   var ctx = document.getElementById("canv").getContext("2d");
 
   ctx.clearRect(0, 0, 480, 400);
 }
+
+//need to lower odds else we'll go bankrupt
