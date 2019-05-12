@@ -11,8 +11,8 @@ function main() {
 	}
 
 
-	//setCookie("test", 100, 1);
-	//alert(getCookie("test"));
+	setCookie("test", 100, 1);
+	//alert(getCookie("username"));
 }
 
 function loadPage(url, pix) {
