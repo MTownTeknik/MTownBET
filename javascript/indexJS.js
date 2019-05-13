@@ -10,7 +10,7 @@ function main() {
 		removeLoad();
 	}
 
-	setCookie("Currency", 9999, 1);
+	setCookie("Currency", 99999, 1);
 	UpdateMoney();
 
 }
@@ -39,5 +39,6 @@ function UpdateMoney() {
 
 	var currencyString = "$ " + getCookie("Currency"); 
 
+	alert("test");
 	dv.innerHTML = currencyString;
 }
