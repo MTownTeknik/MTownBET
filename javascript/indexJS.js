@@ -10,9 +10,9 @@ function main() {
 		removeLoad();
 	}
 
+	setCookie("Currency", 10000, 1);
+	UpdateMoney();
 
-	setCookie("test", 100, 1);
-	//alert(getCookie("username"));
 }
 
 function loadPage(url, pix) {
@@ -31,4 +31,13 @@ function removeLoad() {
 		loadPage("roulette.html", 50);									//BYT ROULETTE MED HOME.HTML NÄR DEN ÄR GJORD!!!
 		clearInterval(loadAnim);
 	}
+}
+
+
+function UpdateMoney() {
+	var dv = document.getElementById("currency").getElementsByTagName('p')[0];
+
+	var currencyString = "$ " + getCookie("Currency"); 
+
+	dv.innerHTML = currencyString;
 }
