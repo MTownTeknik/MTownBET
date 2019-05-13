@@ -10,7 +10,7 @@ function main() {
 		removeLoad();
 	}
 
-	setCookie("Currency", 10000, 1);
+	setCookie("Currency", 9999, 1);
 	UpdateMoney();
 
 }
