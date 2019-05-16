@@ -1,4 +1,4 @@
-var interval = setInterval(crasher, 10);
+var interval = setInterval(crasher, 8);
 var stop = false
 var randomNum;
 var fcnt = 0; //function time
@@ -14,8 +14,8 @@ function crasher() {
 
   if (stop == false && iteration % 4 == 0) {
     fcnt++;
-    multiplier = fcnt/10;//multiplier + 0.01;
-//    multiplier = Math.round(multiplier * 100) / 100
+    multiplier = multiplier + 0.01;
+    multiplier = Math.round(multiplier * 100) / 100;
   }
   console.log(fcnt + " " + randomNum);
 
@@ -51,5 +51,3 @@ function clean() {
 
   ctx.clearRect(0, 0, 480, 400);
 }
-
-//need to lower odds else we'll go bankrupt
