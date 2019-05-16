@@ -12,11 +12,25 @@
 
 </head>
 
-<body>
+<body style="text-align: center; width: 100%">
 	<div style="text-align:	center;width:100%">
-
-		<input type="button" value="bet" id="betButton">
 		<canvas id="canv" width="480" height="400" />
+	</div>
+
+	<div id="betField">
+		<p id="betHeader">YOUR BET</p><br><br>
+		<input type="textfield" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+		oninput="writee()" value="100" id="betAmount">
+
+		<input type="button" onclick="clearBet()" value="CLEAR" id="clearBTN">
+
+		<input type="button" onclick="add(10)" value="+10" class="betBTN">
+		<input type="button" onclick="add(100)" value="+100" class="betBTN">
+		<input type="button" onclick="add(-10)" value="-10" class="betBTN">
+		<input type="button" onclick="add(-100)" value="-100" class="betBTN">
+		<input type="button" onclick="multiply(0.5)" value="1/2" class="betBTN">
+		<input type="button" onclick="multiply(2)" value="X2" class="betBTN">
+		<input type="button" onclick="setMax()" value="MAX" class="betBTN">
 
 	</div>
 </body>
