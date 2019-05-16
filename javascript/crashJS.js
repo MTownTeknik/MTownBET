@@ -17,7 +17,7 @@ function crasher() {
     multiplier = multiplier + 0.01;
     multiplier = Math.round(multiplier * 100) / 100;
   }
-  console.log(fcnt + " " + randomNum);
+  //console.log(fcnt + " " + randomNum);
 
   if (fcnt >= randomNum) {
     stop = true;
@@ -38,7 +38,7 @@ function graph() {
     ctx.fillRect(xPos/1.7, yPos - 3, 3, 1000);
   }
 
-  ctx.fillStyle = "#232c31";
+  ctx.fillStyle = "#2f3e45";
   ctx.fillRect(10, 70, 200, 50);
 
   ctx.font = "30px Arial";
