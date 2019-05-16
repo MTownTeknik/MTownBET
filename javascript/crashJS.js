@@ -54,6 +54,7 @@ function graph() {
 function bet() {
   interval = setInterval(crasher, 8);
   invested = currentBet;
+  console.log(invested + " " + maxCurrency);
   maxCurrency -= invested;
   setCookie("Currency", maxCurrency, 7);
   buttonPressed++;
