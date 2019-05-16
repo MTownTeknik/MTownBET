@@ -45,9 +45,3 @@ function graph() {
   ctx.fillStyle = "#FFF"
   ctx.fillText(multiplier + "X", 80, 110);
 }
-//clearing the canvas
-function clean() {
-  var ctx = document.getElementById("canv").getContext("2d");
-
-  ctx.clearRect(0, 0, 480, 400);
-}
