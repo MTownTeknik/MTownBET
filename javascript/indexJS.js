@@ -39,6 +39,5 @@ function UpdateMoney() {
 
 	var currencyString = "$ " + getCookie("Currency"); 
 
-	alert("test");
 	dv.innerHTML = currencyString;
 }

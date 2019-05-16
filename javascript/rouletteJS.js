@@ -137,34 +137,36 @@ function ClearBets()
 function BetColor(collar) 
 {
 	var betGraph = document.getElementById("bet" + collar).getElementsByTagName('p')[0];
+	if(current <= maxCurrency) {
 
-	switch(collar) 
-	{
-		case "Red":
-			redInvested += currentBet;
-			maxCurrency -= currentBet;
-			betGraph.innerHTML = "INVESTED: " + redInvested;
-			break;
-		case "Green":
-			greenInvested += currentBet;
-			maxCurrency -= currentBet;
-			betGraph.innerHTML = "INVESTED: " + greenInvested;
-			break;
-		case "Black":
-			blackInvested += currentBet;
-			maxCurrency -= currentBet;
-			betGraph.innerHTML = "INVESTED: " + blackInvested;
-			break;
-		case "Odd":
-			oddInvested += currentBet;
-			maxCurrency -= currentBet;
-			betGraph.innerHTML = "INVESTED: " + oddInvested;
-			break;
-		case "Even":
-			evenInvested += currentBet;
-			maxCurrency -= currentBet;
-			betGraph.innerHTML = "INVESTED: " + evenInvested;
-			break;
+		switch(collar) 
+		{
+			case "Red":
+				redInvested += currentBet;
+				maxCurrency -= currentBet;
+				betGraph.innerHTML = "INVESTED: " + redInvested;
+				break;
+			case "Green":
+				greenInvested += currentBet;
+				maxCurrency -= currentBet;
+				betGraph.innerHTML = "INVESTED: " + greenInvested;
+				break;
+			case "Black":
+				blackInvested += currentBet;
+				maxCurrency -= currentBet;
+				betGraph.innerHTML = "INVESTED: " + blackInvested;
+				break;
+			case "Odd":
+				oddInvested += currentBet;
+				maxCurrency -= currentBet;
+				betGraph.innerHTML = "INVESTED: " + oddInvested;
+				break;
+			case "Even":
+				evenInvested += currentBet;
+				maxCurrency -= currentBet;
+				betGraph.innerHTML = "INVESTED: " + evenInvested;
+				break;
+		}
 	}
 
 	//writee();

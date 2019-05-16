@@ -2,6 +2,14 @@ var maxCurrency = 10000;
 var currentBet = 100;
 
 
+function main() {
+	maxCurrency = getCookie("Currency");
+
+	if(maxCurrency == 0) {
+		maxCurrency = 10000;
+	}
+}
+
 function add(amount) {
 	getCurrentBet();
 
