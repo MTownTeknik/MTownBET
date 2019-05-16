@@ -47,7 +47,7 @@ function graph() {
   ctx.fillRect(10, 70, 200, 50);
 
   ctx.font = "30px Arial";
-  ctx.fillStyle = "#FFF"
+  ctx.fillStyle = "#FFF";
   ctx.fillText(multiplier + "X", 80, 110);
 }
 
@@ -72,7 +72,7 @@ function bet() {
   if (stop == true && able2pullOut == false) {
     buttonPressed = 0;
     able2pullOut = false;
-    stop = false
+    stop = false;
   }
   setCookie("Currency", maxCurrency, 7);
 }
