@@ -78,10 +78,9 @@ function slide(){
 		Draw();
 	} else {
 		spinBool = false;
-		console.log(offset%3700);
-		console.log("TALET ÄR: " + numOrder[(4 + Math.floor((offset%3700 + 50)/100)) % 37])
 
 		var clr = "";
+		var num;
 
 		if(((4 + Math.floor((offset%3700 + 50)/100)) % 37) %2 == 0)
 		{
@@ -95,8 +94,11 @@ function slide(){
 			clr = "Green";
 		}
 
-		alert("DU RULLADE: " + numOrder[(4 + Math.floor((offset%3700 + 50)/100)) % 37] + ", Färgen är: " + clr);
+		num = numOrder[(4 + Math.floor((offset%3700 + 50)/100)) % 37];
 		clearInterval(spinInterval);
+
+		Payout(clr, num);
+		ClearBets();
 	}
 }
 
@@ -122,7 +124,7 @@ function LockBets()
 
 	if(totalBetted > 0) 
 	{
-		//Set cookiers(current cookies - totalBetted)
+		setCookie("Currency", maxCurrency, 7);
 		return true;
 	}
 	return false;
@@ -130,7 +132,41 @@ function LockBets()
 
 function ClearBets() 
 {
+	document.getElementById("betRed").getElementsByTagName('p')[0].innerHTML = "INVESTED: 0";
+	document.getElementById("betBlack").getElementsByTagName('p')[0].innerHTML = "INVESTED: 0";
+	document.getElementById("betGreen").getElementsByTagName('p')[0].innerHTML = "INVESTED: 0";
+	document.getElementById("betEven").getElementsByTagName('p')[0].innerHTML = "INVESTED: 0";
+	document.getElementById("betOdd").getElementsByTagName('p')[0].innerHTML = "INVESTED: 0";
 
+	redInvested = 0;
+	blackInvested = 0;
+	greenInvested = 0;
+	evenInvested = 0;
+	oddInvested = 0;
+}
+
+function Payout(collor, namber) 
+{
+	switch(collor) 
+	{
+		case "Red":
+			maxCurrency += (2 * redInvested);
+			break;
+		case "Black":
+			maxCurrency += (2 * blackInvested);
+			break;
+		case "Green":
+			maxCurrency += (2 * greenInvested);
+			break;
+	}
+
+	if(namber % 2 == 0) {
+		maxCurrency += (2 * evenInvested);
+	} else {
+		maxCurrency += (2 * oddInvested);
+	}
+
+	setCookie("Currency", maxCurrency, 7);
 }
 
 

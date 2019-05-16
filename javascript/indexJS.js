@@ -11,7 +11,8 @@ function main() {
 	}
 
 	setCookie("Currency", 99999, 1);
-	UpdateMoney();
+
+	setInterval(UpdateMoney, 1000);
 
 }
 
