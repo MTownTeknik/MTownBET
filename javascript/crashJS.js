@@ -55,7 +55,6 @@ function bet() {
   interval = setInterval(crasher, 8);
   invested = currentBet;
   maxCurrency -= invested;
-  setCookie("Currency", maxCurrency, 7);
   buttonPressed++;
 
   if (buttonpressed = 1) {
@@ -76,4 +75,10 @@ function bet() {
     able2pullOut = false;
     stop = false
   }
+  setCookie("Currency", maxCurrency, 7);
 }
+
+/*
+nextup blir så att man kan spela om och att lyckas
+dra sig ur för det verkar inte fungera direkt
+*/
