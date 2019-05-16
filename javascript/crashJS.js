@@ -60,7 +60,6 @@ function bet() {
     able2pullOut = true;
   }
 
-  }
   if (buttonPressed = 2 && able2pullOut == true && stop == false) {
     pullOut = true;
     able2pullOut = false;
