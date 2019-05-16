@@ -52,15 +52,15 @@ function graph() {
 }
 
 function bet() {
-  interval = setInterval(crasher, 8);
-  invested = currentBet;
-  maxCurrency -= invested;
-  buttonPressed++;
-
-  if (buttonpressed = 1) {
+  if (currentBet <= maxCurrency) {
+    interval = setInterval(crasher, 8);
+    invested = currentBet;
+    maxCurrency -= invested;
+    buttonPressed++;
     able2pullOut = true;
   }
 
+  }
   if (buttonPressed = 2 && able2pullOut == true && stop == false) {
     pullOut = true;
     able2pullOut = false;
@@ -79,6 +79,5 @@ function bet() {
 }
 
 /*
-nextup blir så att man kan spela om och att lyckas
-dra sig ur för det verkar inte fungera direkt
+nextup blir så att man kan spela om
 */
