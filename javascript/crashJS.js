@@ -58,7 +58,6 @@ function bet() {
   //setCookie("Currency", maxCurrency, 7);
   buttonPressed++;
 
-
   if (buttonpressed = 1) {
     able2pullOut = true;
   }
