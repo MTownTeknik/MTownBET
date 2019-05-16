@@ -21,6 +21,8 @@ var greenInvested = 0;
 var blackInvested = 0;
 var oddInvested = 0;
 var evenInvested = 0;
+var numInvested = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 
 
 function Draw() {
@@ -54,8 +56,59 @@ function Draw() {
   	
 }
 
+function CreateNumBet() 
+{
+	var parentDiv = document.getElementById("numberBet");
 
-function slide(){
+	for(var i = 0; i < 36; i++)
+	{
+		var newDiv = document.createElement("div");
+		newDiv.classList.add("numBet");
+
+		if(i % 2 == 0) {
+			//newDiv.setAttribute('id', 'betRed');
+		} else {
+			//newDiv.setAttribute('id', 'betBlack');
+		}
+
+		var value = i%12 * 3 - Math.floor(i / 12) + 3;
+
+		var h1 = document.createElement("h1");
+		h1.innerHTML = value;
+
+		var p = document.createElement("p");
+		p.innerHTML = "INVESTED: 0";
+
+		newDiv.appendChild(h1);
+		newDiv.appendChild(p);
+		newDiv.setAttribute('id', ("NUM" + value));
+
+		for(var p = 0; p < 37; p++) 
+		{
+			if(numOrder[p] == value) 
+			{
+				if(p % 2 == 1) {
+					newDiv.classList.add("betRed");
+				} else {
+					newDiv.classList.add("betBlack");
+				}
+
+			}
+		}
+
+
+		var newA = document.createElement("a");
+		newA.setAttribute("onclick", 'BetNumber(' + value + ')');
+
+		newA.appendChild(newDiv);
+
+		parentDiv.appendChild(newA);
+	}
+}
+
+
+function slide()
+{
 	if(offset < spinLength)
 	{
 		if(offset - preOffset < 1500)
@@ -120,7 +173,10 @@ function LockBets()
 	totalBetted += (redInvested + greenInvested + blackInvested);
 	totalBetted += (oddInvested + evenInvested);
 
-	//forloop alla numbers
+	for(var i = 0; i < 36; i++) 
+	{
+		totalBetted += numInvested[i];
+	}
 
 	if(totalBetted > 0) 
 	{
@@ -137,6 +193,12 @@ function ClearBets()
 	document.getElementById("betGreen").getElementsByTagName('p')[0].innerHTML = "INVESTED: 0";
 	document.getElementById("betEven").getElementsByTagName('p')[0].innerHTML = "INVESTED: 0";
 	document.getElementById("betOdd").getElementsByTagName('p')[0].innerHTML = "INVESTED: 0";
+
+	for(var i = 1; i < 36; i++)
+	{
+		document.getElementById("NUM" + i).getElementsByTagName('p')[0].innerHTML = "INVESTED: 0";
+		numInvested[i] = 0;
+	}
 
 	redInvested = 0;
 	blackInvested = 0;
@@ -205,5 +267,17 @@ function BetColor(collar)
 		}
 	}
 
-	//writee();
+}
+
+function BetNumber(nam)
+{
+	if(currentBet <= maxCurrency)
+	{
+		numInvested[nam] += currentBet;
+		maxCurrency -= currentBet;
+
+		var betGraph = document.getElementById("NUM" + nam).getElementsByTagName('p')[0];
+		betGraph.innerHTML = "INVESTED " + numInvested[nam];
+	}
+
 }

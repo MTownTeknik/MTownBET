@@ -10,9 +10,13 @@ function main() {
 		removeLoad();
 	}
 
-	setCookie("Currency", 99999, 1);
+	if(getCookie("Currency") == null) 
+	{
+		setCookie("Currency", 10000, 7);
+	}
 
-	setInterval(UpdateMoney, 1000);
+
+	setInterval(UpdateMoney, 100);
 
 }
 

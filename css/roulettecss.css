@@ -159,3 +159,38 @@
 #betGreen {
 	background-color: #00bb00;
 }
+
+.numBet {
+	border: 1px solid #5994d7;
+	width: 65.5px;
+	height: 64.6666666px;
+
+	float: left;
+	cursor: pointer;
+}
+
+.numBet h1 {
+	font-size: 25px;
+	font-family: Calibri;
+	margin-top: 2px;
+	color: #CCC;
+}
+
+.numBet p {
+	font-size: 10px;
+	font-family: Calibri;
+	margin-top: -10px;
+	color: #CCC;
+}
+
+.numBet p::selection, h1::selection {
+	background-color: transparent;
+}
+
+.betRed {
+	background-color: #ff3855;
+}
+
+.betBlack {
+	background-color: #232323;
+}
