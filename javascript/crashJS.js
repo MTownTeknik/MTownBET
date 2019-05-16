@@ -52,7 +52,7 @@ function graph() {
 }
 
 function bet() {
-  if (currentBet <= maxCurrency && currentBet >1) {
+  if (currentBet <= maxCurrency && currentBet >1 && stop == false) {
     interval = setInterval(crasher, 8);
     invested = currentBet;
     maxCurrency -= invested;
