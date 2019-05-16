@@ -55,12 +55,18 @@ function bet() {
   interval = setInterval(crasher, 8);
   invested = currentBet;
   maxCurrency -= invested;
-  //setCookie("Currency", maxCurrency, 7);
+  setCookie("Currency", maxCurrency, 7);
   buttonPressed++;
 
+  //this if resets everything
+  if (stop == true && able2pullOut == false) {
+    buttonPressed = 0;
+    able2pullOut = false;
+    stop = false
+  }
 
-  if (buttonpressed = 1) {
-    able2pullOut = true;
+  if (pullOut == true && stop == false) {
+    maxCurrency += (invested * multiplier);
   }
 
   if (buttonPressed = 2 && able2pullOut == true && stop == false) {
@@ -68,13 +74,7 @@ function bet() {
     able2pullOut = false;
   }
 
-  if (pullOut == true && stop == false) {
-    maxCurrency += (invested * multiplier);
-  }
-  //this if resets everything
-  if (stop == true && able2pullOut == false) {
-    buttonPressed = 0;
-    able2pullOut = false;
-    stop = false
+  if (buttonpressed = 1) {
+    able2pullOut = true;
   }
 }
