@@ -54,9 +54,10 @@ function graph() {
 function bet() {
   interval = setInterval(crasher, 8);
   invested = currentBet;
-  buttonPressed++;
   maxCurrency -= invested;
-  setCookie("Currency", maxCurrency, 7);
+  //setCookie("Currency", maxCurrency, 7);
+  buttonPressed++;
+
 
   if (buttonpressed = 1) {
     able2pullOut = true;
