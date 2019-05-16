@@ -10,7 +10,7 @@ function main() {
 		removeLoad();
 	}
 
-	if(getCookie("Currency") == null) 
+	if(getCookie("Currency") == 0 || getCookie("Currency") == null) 
 	{
 		setCookie("Currency", 10000, 7);
 	}
