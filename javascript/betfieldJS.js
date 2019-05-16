@@ -4,7 +4,7 @@ var currentBet = 100;
 
 function main() {
 	maxCurrency = getCookie("Currency");
-	
+
 	if(maxCurrency == 0) {
 		maxCurrency = 10000;
 	}
@@ -46,7 +46,7 @@ function multiply(factor) {
 
 
 function setMax() {
-	currentBet = maxCurrency;
+	currentBet = Number(maxCurrency);
 	changeText();
 }
 
