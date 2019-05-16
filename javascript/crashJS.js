@@ -79,4 +79,5 @@ function bet() {
 
 /*
 nextup blir så att man kan spela om
+och så att start knappen ändras
 */
