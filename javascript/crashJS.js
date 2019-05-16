@@ -52,7 +52,7 @@ function graph() {
 }
 
 function bet() {
-  if (currentBet <= maxCurrency) {
+  if (currentBet <= maxCurrency && currentBet >1) {
     interval = setInterval(crasher, 8);
     invested = currentBet;
     maxCurrency -= invested;
@@ -66,7 +66,7 @@ function bet() {
   }
 
   if (pullOut == true && stop == false) {
-    maxCurrency += (invested * multiplier);
+    maxCurrency += Math.round(invested * multiplier);
   }
   //this if resets everything
   if (stop == true && able2pullOut == false) {
