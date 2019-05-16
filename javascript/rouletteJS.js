@@ -218,7 +218,7 @@ function Payout(collor, namber)
 			maxCurrency += (2 * blackInvested);
 			break;
 		case "Green":
-			maxCurrency += (2 * greenInvested);
+			maxCurrency += (14 * greenInvested);
 			break;
 	}
 
@@ -226,6 +226,11 @@ function Payout(collor, namber)
 		maxCurrency += (2 * evenInvested);
 	} else {
 		maxCurrency += (2 * oddInvested);
+	}
+
+	for(var i = 0; i < 36; i++) 
+	{
+		maxCurrency += (10 * numInvested[i]);
 	}
 
 	setCookie("Currency", maxCurrency, 7);
