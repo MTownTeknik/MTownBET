@@ -137,7 +137,7 @@ function ClearBets()
 function BetColor(collar) 
 {
 	var betGraph = document.getElementById("bet" + collar).getElementsByTagName('p')[0];
-	if(current <= maxCurrency) {
+	if(currentBet <= maxCurrency) {
 
 		switch(collar) 
 		{
