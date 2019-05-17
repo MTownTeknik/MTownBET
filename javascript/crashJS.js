@@ -87,6 +87,7 @@ function clean() {
 
 
 /*
-nextup blir så att man kan spela om
-och så att start knappen ändras
+Fixa så att man faktiskt kan dra ut.
+Sen ska man kunna spela om.
+Måste ändre "invest" knappen när man tryckt på den en gång
 */
