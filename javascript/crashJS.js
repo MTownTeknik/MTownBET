@@ -17,7 +17,7 @@ randomNum = Math.floor((Math.random() * 200));
 function crasher() {
   iteration++;
 
-  if (stop == false && iteration % 4 == 0) {
+  if (stop == false && iteration % 8 == 0) {
     fcnt++;
     multiplier = multiplier + 0.01;
     multiplier = Math.round(multiplier * 100) / 100;
@@ -47,12 +47,12 @@ function graph() {
   ctx.fillRect(10, 70, 200, 50);
 
   ctx.font = "30px Arial";
-  ctx.fillStyle = "#FFF"
+  ctx.fillStyle = "#FFF";
   ctx.fillText(multiplier + "X", 80, 110);
 }
 
 function bet() {
-  if (currentBet <= maxCurrency) {
+  if (currentBet <= maxCurrency && currentBet >= 1) {
     interval = setInterval(crasher, 8);
     invested = currentBet;
     maxCurrency -= invested;
@@ -60,21 +60,29 @@ function bet() {
     able2pullOut = true;
   }
 
-  if (buttonPressed = 2 && able2pullOut == true && stop == false) {
+  if (buttonPressed == 2 && able2pullOut == true && stop == false) {
     pullOut = true;
     able2pullOut = false;
   }
 
   if (pullOut == true && stop == false) {
-    maxCurrency += (invested * multiplier);
+    maxCurrency += Math.round(invested * multiplier);
   }
-  //this if resets everything
-  if (stop == true && able2pullOut == false) {
-    buttonPressed = 0;
-    able2pullOut = false;
-    stop = false
-  }
+
   setCookie("Currency", maxCurrency, 7);
+}
+
+//clearing the canvas
+function clean() {
+  var ctx = document.getElementById("canv").getContext("2d");
+
+  ctx.clearRect(0, 0, 480, 400);
+}
+
+function restart() {
+  buttonPressed = 0;
+  able2pullOut = false;
+  stop = false;
 }
 
 /*
