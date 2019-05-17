@@ -71,6 +71,13 @@ function bet() {
   UpdateMax();
 }
 
+function restart() {
+  buttonPressed = 0;
+  able2pullOut = false;
+  stop = false;
+  clean();
+}
+
 //clearing the canvas
 function clean() {
   var ctx = document.getElementById("canv").getContext("2d");
@@ -78,11 +85,6 @@ function clean() {
   ctx.clearRect(0, 0, 480, 400);
 }
 
-function restart() {
-  buttonPressed = 0;
-  able2pullOut = false;
-  stop = false;
-}
 
 /*
 nextup blir så att man kan spela om
