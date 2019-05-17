@@ -161,6 +161,21 @@ function Roll()
 	{
 		spinBool = true;
 		spinLength = Math.random() * 4000 + 4000 + offset;
+
+		console.log(spinLength);
+
+		spinLength = 148;
+
+		if((spinLength) % 50 <= 5) {
+			spinLength += 2;
+			alert("+1");
+		}
+		if((spinLength) % 50 >= 45) {
+			spinLength -= 3;
+			alert("-1");
+		}
+		
+
 		preOffset = offset;
 		vel = 0.25;
 		spinInterval = setInterval(slide, 10);

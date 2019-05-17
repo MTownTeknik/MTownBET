@@ -87,3 +87,9 @@ function UpdateMax()
 {
 	document.getElementById("betHeader").innerHTML = "YOUR BET (MAX: " + maxCurrency + ")";
 }
+
+function ChangeBalance(value) 
+{
+	maxCurrency += value;
+	setCookie("Currency", maxCurrency, 7);
+}
