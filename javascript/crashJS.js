@@ -17,7 +17,7 @@ randomNum = Math.floor((Math.random() * 200));
 function crasher() {
   iteration++;
 
-  if (stop == false && iteration % 8 == 0) {
+  if (stop == false && iteration % 6 == 0) {
     fcnt++;
     multiplier = multiplier + 0.01;
     multiplier = Math.round(multiplier * 100) / 100;
@@ -70,6 +70,7 @@ function bet() {
   }
 
   setCookie("Currency", maxCurrency, 7);
+  UpdateMax();
 }
 
 //clearing the canvas
