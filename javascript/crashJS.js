@@ -77,6 +77,13 @@ function bet() {
   setCookie("Currency", maxCurrency, 7);
 }
 
+//clearing the canvas
+function clean() {
+  var ctx = document.getElementById("canv").getContext("2d");
+
+  ctx.clearRect(0, 0, 480, 400);
+}
+
 /*
 nextup blir så att man kan spela om
 och så att start knappen ändras
