@@ -2,6 +2,8 @@
 	border: 4px solid #5994d7;
 	border-radius: 15px;
 	background-color: #2f3e45;
+
+	margin-left: -360px;
 }
 
 #betField {
@@ -14,10 +16,6 @@
 	width: 850px;
 	height: 80px;
 
-	float: right;
-	margin-top: 400px;
-	margin-right: 100px;
-
 	background-color: #2f3e45;
 }
 
@@ -26,16 +24,34 @@
 	border-radius: 10px;
 
 	display: inline-block;
-	margin-top: 20px;
 
-	width: 140px;
-	height: 50px;
+	width: 350px;
+	height: 350px;
+
+	float: right;
+	margin-top: -360px;
+	margin-right: 85px;
 
 	background-color: #2f3e45;
 }
 
 #betButton {
-	margin-top: 10px;
+	border: 2px solid #5994d7;
+	border-radius: 15px;
+
+	width: 355px;
+	height: 40px;
+
+	background-color: #2f3e45;
+	color: #FFF;
+	font-family: Calibri;
+	font-size: 25px;
+
+	float: right;
+	margin-top: -412px;
+	margin-right: 85px;
+
+	outline: none;
 }
 
 #betAmount {

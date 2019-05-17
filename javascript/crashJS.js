@@ -11,18 +11,18 @@ var invested = 0;
 var buttonPressed = 0;
 var pullOut = false;
 var able2pullOut = false;
-
-randomNum = Math.floor((Math.random() * 200));
+//changing random num changes the max multiplier value
+randomNum = Math.floor((Math.random() * 140));
 
 function crasher() {
   iteration++;
-
+  //iteration % n. - slower multiplier speed and + faster
   if (stop == false && iteration % 6 == 0) {
     fcnt++;
     multiplier = multiplier + 0.01;
     multiplier = Math.round(multiplier * 100) / 100;
   }
-  //console.log(fcnt + " " + randomNum);
+  console.log(fcnt + " " + randomNum);
 
   if (fcnt >= randomNum) {
     stop = true;
@@ -53,9 +53,9 @@ function graph() {
 
 function bet() {
   if (currentBet <= maxCurrency && currentBet >= 1) {
-    interval = setInterval(crasher, 8);
+    interval = setInterval(crasher, 12);
     invested = currentBet;
-    maxCurrency -= invested;
+    ChangeBalance(-invested);
     buttonPressed++;
     able2pullOut = true;
   }
@@ -66,10 +66,8 @@ function bet() {
   }
 
   if (pullOut == true && stop == false) {
-    maxCurrency += Math.round(invested * multiplier);
+    ChangeBalance(Math.round(invested * multiplier));
   }
-
-  setCookie("Currency", maxCurrency, 7);
   UpdateMax();
 }
 
