@@ -17,7 +17,7 @@ randomNum = Math.floor((Math.random() * 200));
 function crasher() {
   iteration++;
 
-  if (stop == false && iteration % 4 == 0) {
+  if (stop == false && iteration % 8 == 0) {
     fcnt++;
     multiplier = multiplier + 0.01;
     multiplier = Math.round(multiplier * 100) / 100;
@@ -68,12 +68,7 @@ function bet() {
   if (pullOut == true && stop == false) {
     maxCurrency += Math.round(invested * multiplier);
   }
-  //this if resets everything
-  if (stop == true && able2pullOut == false) {
-    buttonPressed = 0;
-    able2pullOut = false;
-    stop = false;
-  }
+
   setCookie("Currency", maxCurrency, 7);
 }
 
@@ -82,6 +77,12 @@ function clean() {
   var ctx = document.getElementById("canv").getContext("2d");
 
   ctx.clearRect(0, 0, 480, 400);
+}
+
+function restart() {
+  buttonPressed = 0;
+  able2pullOut = false;
+  stop = false;
 }
 
 /*
