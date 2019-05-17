@@ -234,11 +234,16 @@ function Payout(collor, namber)
 	}
 
 	setCookie("Currency", maxCurrency, 7);
+	UpdateMax();
 }
 
 
 function BetColor(collar) 
 {
+	if(spinBool) {
+		return;
+	}
+
 	var betGraph = document.getElementById("bet" + collar).getElementsByTagName('p')[0];
 	if(currentBet <= maxCurrency) {
 
@@ -272,10 +277,16 @@ function BetColor(collar)
 		}
 	}
 
+	UpdateMax();
+
 }
 
 function BetNumber(nam)
 {
+	if(spinBool) {
+		return;
+	}
+
 	if(currentBet <= maxCurrency)
 	{
 		numInvested[nam] += currentBet;
@@ -285,4 +296,28 @@ function BetNumber(nam)
 		betGraph.innerHTML = "INVESTED " + numInvested[nam];
 	}
 
+	UpdateMax();
+
+}
+
+function Refund() 
+{
+	if(spinBool) {
+		return;
+	}
+
+	var totalBetted = 0;
+	totalBetted += (redInvested + greenInvested + blackInvested);
+	totalBetted += (oddInvested + evenInvested);
+
+	for(var i = 0; i < 36; i++) 
+	{
+		totalBetted += numInvested[i];
+	}
+
+	maxCurrency += totalBetted;
+
+
+	ClearBets();
+	UpdateMax();
 }

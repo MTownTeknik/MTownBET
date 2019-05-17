@@ -8,6 +8,8 @@ function main() {
 	if(maxCurrency == 0) {
 		maxCurrency = 10000;
 	}
+
+	UpdateMax();
 }
 
 function add(amount) {
@@ -79,4 +81,9 @@ function writee() {
 	}
 
 	changeText();
+}
+
+function UpdateMax() 
+{
+	document.getElementById("betHeader").innerHTML = "YOUR BET (MAX: " + maxCurrency + ")";
 }

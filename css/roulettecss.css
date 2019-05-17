@@ -9,7 +9,7 @@
 	border-radius: 10px;
 
 	display: inline-block;
-	margin-top: 20px;
+	margin-top: 10px;
 
 	width: 850px;
 	height: 80px;
@@ -193,4 +193,19 @@
 
 .betBlack {
 	background-color: #232323;
+}
+
+.bigButton {
+	border: 2px solid #5994d7;
+	border-radius: 15px;
+
+	width: 160px;
+	height: 35px;
+
+	background-color: #2f3e45;
+	color: #FFF;
+	font-family: Calibri;
+	font-size: 15px;
+
+	outline: none;
 }

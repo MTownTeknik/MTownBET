@@ -10,15 +10,16 @@
 	<script type="text/javascript" src="javascript/utils.js"></script>
 	<title>Roulette</title>
 </head>
-<body onload="Draw(), main(), CreateNumBet()">
+<body style="text-align: center;" onload="Draw(), main(), CreateNumBet()">
 
-	<div style="text-align:	center;width:100%">
-		<input type="button" name="PH" onclick="Roll()" value="PRESS TO TEST ROLL"><br>
+	<div style="width:100%">
 		<canvas id="canv" width="900" height="80"/>
 	</div>
 
+	<input type="button"onclick="Roll()" value="ROLL WHEEL"	class="bigButton">
+	<input type="button"onclick="Refund()" value="REFUND INVESTMENT" class="bigButton">
 
-	<div style="text-align: center; width: 100%">		
+	<div style="width: 100%">		
 		<div id="betField">
 			<p id="betHeader">YOUR BET</p><br><br>
 			<input type="textfield" onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
