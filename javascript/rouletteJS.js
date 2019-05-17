@@ -162,17 +162,14 @@ function Roll()
 		spinBool = true;
 		spinLength = Math.random() * 4000 + 4000 + offset;
 
-		console.log(spinLength);
 
-		spinLength = 148;
-
-		if((spinLength) % 50 <= 5) {
-			spinLength += 2;
-			alert("+1");
+		if((spinLength + 50) % 100 <= 5) 
+		{
+			spinLength += (2 + (50 - spinLength%100));
 		}
-		if((spinLength) % 50 >= 45) {
-			spinLength -= 3;
-			alert("-1");
+		if((spinLength + 50) % 100 >= 95) 
+		{
+			spinLength -= (6 - (50 - spinLength%100));
 		}
 		
 
