@@ -90,6 +90,9 @@ function UpdateMax()
 
 function ChangeBalance(value) 
 {
-	maxCurrency += value;
+	maxCurrency += Number(value);
 	setCookie("Currency", maxCurrency, 7);
 }
+
+//Crash hittar inte funktionen ChangeBalance.
+//Den glr det privat men inte pa github
