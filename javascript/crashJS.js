@@ -55,7 +55,7 @@ function bet() {
   if (currentBet <= maxCurrency && currentBet >= 1) {
     interval = setInterval(crasher, 12);
     invested = currentBet;
-    ChangeBalance(-invested);
+    ChangeBalance(0-invested);
     buttonPressed++;
     able2pullOut = true;
   }
