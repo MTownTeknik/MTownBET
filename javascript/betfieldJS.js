@@ -90,7 +90,8 @@ function UpdateMax()
 
 function ChangeBalance(value) 
 {
-	maxCurrency += Number(value);
+	maxCurrency = Number(maxCurrency) + Number(value);
+	alert(maxCurrency);
 	setCookie("Currency", maxCurrency, 7);
 }
 
