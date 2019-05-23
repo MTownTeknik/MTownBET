@@ -1,4 +1,4 @@
-var loadRepeats = 0;		//DEN SKA VARA 3. MAN KAN TEMPORÄRT BYTA DEN TILL (0) FÖR ATT SKIPPA ANIMATION VID UTVECKLING!
+var loadRepeats = 3;		//DEN SKA VARA 3. MAN KAN TEMPORÄRT BYTA DEN TILL (0) FÖR ATT SKIPPA ANIMATION VID UTVECKLING!
 
 
 loadAnim = setInterval(removeLoad, 1000);
@@ -21,7 +21,7 @@ function main() {
 }
 
 function loadPage(url, pix) {
-
+	
 	var frame = document.getElementById("gameFrame");
 	frame.src = url;
 	frame.style.height = pix + 'vw';
@@ -45,4 +45,16 @@ function UpdateMoney() {
 	var currencyString = "$ " + getCookie("Currency"); 
 
 	dv.innerHTML = currencyString;
+}
+
+function FadeB(activeBool, id) 
+{
+	var img = document.getElementById(id);
+
+	if(activeBool == true) 
+	{
+		img.src = "img/" + id + "IconActive.png";
+	} else {
+		img.src = "img/" + id + "Icon.png";
+	}
 }
