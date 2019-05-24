@@ -33,8 +33,8 @@
 	height: 50px;
 }
 
-.colorBet :hover {
-	
+.colorBet:hover {
+	border: 1px solid #FFF;
 }
 
 .invst h1 {
