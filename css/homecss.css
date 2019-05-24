@@ -38,8 +38,8 @@ body {
 
 
 #gameFrame {
-	width: 80vw;
-	height: 30vw;
+	width: 100vw;
+	height: 35vw;
 	margin-top: 2vw;
 	margin-left: 10vw;
 	border: 0px;
@@ -138,4 +138,23 @@ body {
 @keyframes clockwiseRot {
 	from {transform: rotate(0deg);}
 	to {transform: rotate(360deg);}
+}
+
+#footer {
+	width: 100%;
+	height: 7vw;
+	background-color: #2f3e45;
+	border-top: 0.2vw solid #5994d7;
+
+	font-size: 1.5vw;
+	font-family: Calibri, sans-serif;
+	color: #FFF;
+	text-align: center;
+
+	flex: 1;
+}
+
+#footer a {
+	margin-left: 1vw;
+	margin-right: 1vw;
 }

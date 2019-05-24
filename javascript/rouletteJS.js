@@ -65,12 +65,6 @@ function CreateNumBet()
 		var newDiv = document.createElement("div");
 		newDiv.classList.add("numBet");
 
-		if(i % 2 == 0) {
-			//newDiv.setAttribute('id', 'betRed');
-		} else {
-			//newDiv.setAttribute('id', 'betBlack');
-		}
-
 		var value = i%12 * 3 - Math.floor(i / 12) + 3;
 
 		var h1 = document.createElement("h1");

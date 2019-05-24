@@ -94,6 +94,3 @@ function ChangeBalance(value)
 	alert(maxCurrency);
 	setCookie("Currency", maxCurrency, 7);
 }
-
-//Crash hittar inte funktionen ChangeBalance.
-//Den glr det privat men inte pa github
