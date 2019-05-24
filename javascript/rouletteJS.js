@@ -321,7 +321,8 @@ function Refund()
 		totalBetted += numInvested[i];
 	}
 
-	maxCurrency += totalBetted;
+
+	maxCurrency = Number(maxCurrency) + Number(totalBetted);
 
 
 	ClearBets();
