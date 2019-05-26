@@ -18,7 +18,7 @@ body {
 
 #headerLogo {
 	padding-left: 2vw;
-	margin-top: 0.5vw;
+	margin-top: -2vw;
 	width: 10vw;
 	cursor: pointer;
 }
@@ -157,4 +157,11 @@ body {
 #footer a {
 	margin-left: 1vw;
 	margin-right: 1vw;
+	cursor: pointer;
+}
+
+#header {
+	background-image: url("../img/testfade.png");
+	background-repeat: repeat;
+	background-size: contain;
 }

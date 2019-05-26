@@ -73,7 +73,7 @@
 
 #numberBet {
 	border: 2px solid #5994d7;
-	border-radius: 10px;
+	border-radius: 5px;
 	background-color: #2f3e45;
 
 	margin-top: 5px;
@@ -165,9 +165,9 @@
 }
 
 .numBet {
-	border: 1px solid #5994d7;
-	width: 65.5px;
-	height: 64.6666666px;
+	border: 2px solid #5994d7;
+	width: 63.5px;
+	height: 62.6666666px;
 
 	float: left;
 	cursor: pointer;

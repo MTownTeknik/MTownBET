@@ -64,6 +64,7 @@ function CreateNumBet()
 	{
 		var newDiv = document.createElement("div");
 		newDiv.classList.add("numBet");
+		newDiv.classList.add("FadeAura");
 
 		var value = i%12 * 3 - Math.floor(i / 12) + 3;
 
