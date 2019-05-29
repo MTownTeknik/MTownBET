@@ -1,11 +1,11 @@
 #canv {
-	border: 3px solid #5994d7;
+	border: 3px solid #EEE;
 	border-radius: 25px;
 
 }
 
 #betField {
-	border: 2px solid #5994d7;
+	border: 2px solid #CCC;
 	border-radius: 10px;
 
 	display: inline-block;
@@ -18,7 +18,7 @@
 }
 
 .colorBet {
-	border: 2px solid #5994d7;
+	border: 2px solid #CCC;
 	border-radius: 10px;
 	background-color: #2f3e45;
 
@@ -58,7 +58,7 @@
 
 
 .typeBet {
-	border: 2px solid #5994d7;
+	border: 2px solid #CCC;
 	border-radius: 10px;
 	background-color: #2f3e45;
 
@@ -72,7 +72,7 @@
 }
 
 #numberBet {
-	border: 2px solid #5994d7;
+	border: 2px solid #CCC;
 	border-radius: 5px;
 	background-color: #2f3e45;
 
@@ -153,7 +153,7 @@
 } 
 
 #betRed {
-	background-color: #ff3855;
+	background-color: #ba2c2c;
 }
 
 #betBlack {
@@ -165,7 +165,7 @@
 }
 
 .numBet {
-	border: 2px solid #5994d7;
+	border: 2px solid #CCC;
 	width: 63.5px;
 	height: 62.6666666px;
 
@@ -192,7 +192,7 @@
 }
 
 .betRed {
-	background-color: #ff3855;
+	background-color: #ba2c2c;
 }
 
 .betBlack {
@@ -200,7 +200,7 @@
 }
 
 .bigButton {
-	border: 2px solid #5994d7;
+	border: 2px solid #CCC;
 	border-radius: 15px;
 
 	width: 160px;
@@ -216,4 +216,5 @@
 
 .FadeAura:hover {
 	border: 2px solid #FFF;
+	cursor: pointer;
 }

@@ -70,6 +70,7 @@ function getCurrentBet() {
 function changeText() {
 	var textF = document.getElementById("betAmount");
 	textF.value = currentBet;
+	UpdateMax();
 }
 
 

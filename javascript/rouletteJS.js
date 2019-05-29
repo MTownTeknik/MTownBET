@@ -1,5 +1,5 @@
 
-var redColor = "#ff3855";
+var redColor = "#ba2c2c";
 var blackColor = "#232323";
 var greenColor = "#00bb00";
 
@@ -102,7 +102,7 @@ function CreateNumBet()
 }
 
 
-function slide()
+function Slide()
 {
 	if(offset < spinLength)
 	{
@@ -170,7 +170,7 @@ function Roll()
 
 		preOffset = offset;
 		vel = 0.25;
-		spinInterval = setInterval(slide, 10);
+		spinInterval = setInterval(Slide, 10);
 	}
 }
 
