@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 
 	<link rel="stylesheet" type="text/css" href="css/crashcss.css">
 
-	<script type="text/javascript" src="javascript/crashJS.js"></script>
-	<script type="text/javascript" src="javascript/betfieldJS.js"></script>
-	<script type="text/javascript" src="javascript/utils.js"></script>
+	<script src="javascript/crashJS.js"></script>
+	<script src="javascript/betfieldJS.js"></script>
+	<script src="javascript/utils.js"></script>
 
 	<title>Crash</title>
 
@@ -16,7 +16,7 @@
 
 <body onload="main()" style="text-align: center; width: 100%">
 	<div style="text-align:	center;width:100%">
-		<canvas id="canv" width="480" height="400" />
+		<canvas id="canv" width="480" height="400"></canvas>
 	</div>
 
 	<input type="Button" onclick="bet()" value="INVEST" id="betButton">
@@ -26,7 +26,7 @@
 
 	<div id="betField">
 		<p id="betHeader">YOUR BET</p><br><br>
-		<input type="textfield" onkeypress="return event.charCode >= 48 && event.charCode <= 57" oninput="writee()" value="100" id="betAmount">
+		<input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" oninput="writee()" value="100" id="betAmount">
 
 		<input type="button" onclick="clearBet()" value="CLEAR" id="clearBTN">
 
