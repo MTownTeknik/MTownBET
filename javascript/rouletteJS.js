@@ -51,7 +51,7 @@ function Draw() {
   		ctx.fillText(numOrder[i%37], i * 100 + 50 - offset%3700, 53);
   	}
 
-  	ctx.fillStyle = "#5994d7";
+  	ctx.fillStyle = "#FFF";
   	ctx.fillRect(450, 0, 4, 150.5);
   	
 }
@@ -160,7 +160,7 @@ function Roll()
 
 		if((spinLength + 50) % 100 <= 5) 
 		{
-			spinLength += (2 + (50 - spinLength%100));
+			spinLength += (3 + (50 - spinLength%100));
 		}
 		if((spinLength + 50) % 100 >= 95) 
 		{
